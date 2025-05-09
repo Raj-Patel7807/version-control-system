@@ -176,7 +176,7 @@ int main(int argc, char *argv[])
             {
                 string argumentC = string(argv[2]);    
                 string argumentD = string(argv[3]);
-                      
+
                 if(argumentC == "-m")
                 {
                     gitClassObj.gitCommit(argumentD);
@@ -217,6 +217,17 @@ int main(int argc, char *argv[])
         else if(argument == "log")
         {
             gitClassObj.gitLog();
+        }
+        // Help
+        else if(argument == "--help")
+        {
+            cout << YEL "git is version control system made by linus Torvalds, this project is a clone of that original system with minimal features \n\n";
+
+            cout << "Usage: " << endl;
+            cout << "git init                           ->   initialize an empty git repository in the current dir" << endl;
+            cout << "git add <'.'|'file_name'>          ->   add the files to staging area" << endl;
+            cout << "git commit <m 'commit message'>    ->   commit your staging files" << endl;
+            cout << "git revert <'HEAD'|'commit_hash'>  ->   rollback to a specific commit" END << endl;
         }
         //git status
         // else if(argument == "status")
