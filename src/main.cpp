@@ -14,6 +14,20 @@ using namespace std;
 #define END  "\033[0m"
 //---------------------
 
+const string configFileName = ".config.txt";
+
+bool config()
+{
+    auto path = filesystem::current_path();
+    for (const auto &entry : filesystem::directory_iterator(path))
+    {
+        if (entry.path().filename() == configFileName)
+        {
+            return true;
+        }
+    }
+    return false;
+}
 
 int main(int argc, char *argv[])
 {
@@ -23,8 +37,93 @@ int main(int argc, char *argv[])
     {
         string argument = string(argv[1]);
 
+        if(!config())
+        {
+            cout << "There is not config:(\n";
+            cout << YEL "First config your Self \n" END;
+            cout << BLU "Type this <./a.out config (User name)>\n" END;
+            return 0;
+        }
+        // config
+        else if(argument == "config")
+        {
+            string argumentUser = string(argv[2]);
+            // UserName
+            if(argumentUser == "user.id")
+            {
+                auto path = filesystem::current_path();
+                ofstream configFile(configFileName);
+                string argumentUserName = string(argv[3]);
+
+                if(configFile.is_open())
+                {
+                    configFile << "UserName: " << argumentUserName << endl;
+                    configFile.close();
+                }
+            }
+            // User Password
+            else if(argumentUser == "user.passwd")
+            {
+                if(!config())
+                {
+                    cout << RED"Please enter your User Id :) \n"END;
+                    return 0;
+                }
+
+                auto path = filesystem::current_path();
+                ofstream configFile(configfileName, ios::app);
+                string argumentUserPass = string(argv[3]);
+
+                if(configFile.is_open())
+                {
+                    configFile << "PassWord: " << argumentUserPass << endl;
+                    configFile.close();
+                }
+
+                cout << "\033[1;32mConfiguration file created successfully!\033[0m" << endl;
+            }
+            // List
+            else if(argumentUser == "--list")
+            {
+                if(!config())
+                {
+                    cout << RED"User hasn't assign configuration \n"END;
+                    return 0;
+                }
+
+                string Pass;
+                cout << "Please, Enter Your PassWord : ";
+                cin >> Pass;
+
+                auto path = filesystem::current_path();
+                ifstream configFile(configFileName);
+
+                string ileLine;
+                string filePass;
+                string fileId;
+
+                if(configFile.is_open())
+                {
+                    getline(configFile, fileLine);
+                    fileId = fileLine.substr(fileLine.find(":") + 1);
+
+                    getLine(configFile, fileLine);
+                    filePass = fileLine.substr(fileLine.find(":") + 1);
+
+                    if(filePass == Pass)
+                    {
+                        cout << "UserName : " << fileId << endl;
+                        cout << "PassWord : " << filePass << endl;
+                    }
+                    else 
+                    {
+                        cout << RED "Please recheck your Password !!!\n"END;
+                    }
+                }
+            }
+        }
         //git init
-        if (argument == "init")
+        else if (argument == "init")
         {
             gitClassObj.gitInit();
             cout <<GRN "git repository initialized successfully!" END<< endl;
@@ -40,6 +139,7 @@ int main(int argc, char *argv[])
                 cout << "Provide a third argument e.g." << endl;
                 cout << "git add <'.' | 'file_name'>" END << endl;
             }
+
             if(argc >= 3)
             {
                 if(argc == 3)
@@ -55,8 +155,11 @@ int main(int argc, char *argv[])
                         gitClassObj.gitAdd(files, 1);
                     }
 
-                } else {
+                }
+                else
+                {
                     string files[argc-2];
+
                     for (int i = 0; i < argc-2; i++)
                     {
                         files[i] = string(argv[i]); 
@@ -72,7 +175,8 @@ int main(int argc, char *argv[])
             if(argc == 4)    //[ git, commit, -m, "msg" ]
             {
                 string argumentC = string(argv[2]);    
-                string argumentD = string(argv[3]);      
+                string argumentD = string(argv[3]);
+                      
                 if(argumentC == "-m")
                 {
                     gitClassObj.gitCommit(argumentD);
