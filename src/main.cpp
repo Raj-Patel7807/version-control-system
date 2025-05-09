@@ -18,9 +18,11 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     gitClass gitClassObj;
+
     if(argc >= 2)
     {
         string argument = string(argv[1]);
+
         //git init
         if (argument == "init")
         {
@@ -28,18 +30,23 @@ int main(int argc, char *argv[])
             cout <<GRN "git repository initialized successfully!" END<< endl;
             
         }
+
         //git add
         else if (argument == "add")                                               
         {
-            if(argc == 2){     
+            if(argc == 2)
+            {     
                 cout << RED "missing arguments!" <<endl;
                 cout << "Provide a third argument e.g." << endl;
                 cout << "git add <'.' | 'file_name'>" END << endl;
             }
-            if(argc >= 3){
-                if(argc == 3){
+            if(argc >= 3)
+            {
+                if(argc == 3)
+                {
                     string argumentC = string(argv[2]);
-                    if (argumentC == ".") {
+                    if (argumentC == ".")
+                    {
                         gitClassObj.gitAdd();
                     }
                     else
