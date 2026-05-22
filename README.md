@@ -21,7 +21,7 @@ This project replicates core functionalities of tools like **Git**, allowing use
 ## File Structure
 ```
 📦 Version Control System 
- └── Src                    → Code Files 
+ └── src                    → Code Files 
         └── main.cpp
         └── commitNode.cpp
         └── gitClass.cpp
