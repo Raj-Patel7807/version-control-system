@@ -5,12 +5,12 @@
 ## 📌 Overview
 First of all thank you so much to Uzair Ahmed .  
 Welcome to the **Version Control System!**  
-We are the **🧙‍♂️ Bitwise Wizards**, and we have researched a fully functional version control system using **C++** for the project of **IT206** from DAU.  
+We have researched a fully functional version control system using **C++** for the project of **IT206** from DAU (Formerly DA-IICT).  
 This project replicates core functionalities of tools like **Git**, allowing users to:
 
-- 🗂️ Manage file versions  
-- 🔍 Track changes  
-- 🔄 Revert to previous states  
+- Manage file versions  
+- Track changes  
+- Revert to previous states  
 
 —all within a custom-built system designed from scratch.
 
@@ -21,12 +21,12 @@ This project replicates core functionalities of tools like **Git**, allowing use
 ## File Structure
 ```
 📦 Version Control System 
- └── 💚 Sec                    → Code Files 
+ └── Src                    → Code Files 
         └── main.cpp
         └── commitNode.cpp
         └── gitClass.cpp
 
- └── 💚 README.md              → Project documentation
+ └── README.md              → Project documentation
 
 ```
 
@@ -115,34 +115,28 @@ bash : g++ main.cpp
 Type |-> ./a.out init
  
 ```
-![init](Images/image.png)
-![init](Images/Image1.png)
-Here , `.git` is the hidden folder . 
 
-### 🗂️ Step 3: Explore the .git Folder 🔍📁<br>
+### 🗂️ Step 3: Explore the .git Folder <br>
 Now We will look into the `.git` folder . 
-![.git](Images/image2.png)
-Here commits foder `commits` folder contains the commits which will use the Linked list.And `staging_area` folder stores the your project . 
+There commits foder `commits` folder contains the commits which will use the Linked list.And `staging_area` folder stores the your project . 
 
-### ➕ Step 4: Add Files to Staging Area 📄✨
+### ➕ Step 4: Add Files to Staging Area
 
 Let's add the html file in the Project folder .
 ```
 Type |-> ./a.out add .
 ```
-### 📝 Step 5: Commit the Changes ✅🗃️
+### 📝 Step 5: Commit the Changes
 
 Let's Commit the git repo . 
 ```
 Type |-> ./a.out commit -m "<Commant>"
 ```
-![commit](Images/image3.png)
 
-### 📜 Step 6: View Commit History 🕘🧾
+### 📜 Step 6: View Commit History
 ```
 Type |-> ./a.out log
 ```
-![log](Images/image4.png)
 Here `log` funtion gives us the inforantion of the commits we have did till now . 
 
 ---
@@ -159,9 +153,6 @@ For that user must do configuration for usering the git commands .
 ./a.ot config user.passwd <Password> (For Password)
 ```
 
-![Config](Images/image7.png)
-
-
 ## 📖 (2) Addition of the `--help` Command
 
 We added the `--help` command ❓ to display all available commands and their usage 📋.  
@@ -173,16 +164,16 @@ It helps users understand how to use the version control system with ease 💡.
 
 # 🌟 Future Ideas
 
-1. 🧑‍💻 Improve user configuration by allowing integration with platforms like **GitHub.com** and other remote repositories 🌐.  
-2. 📤📥 Add support for more Git-like features such as `push` and `pull` to interact with remote repositories.  
-3. 🌿 Implement **Branching Support** to allow users to create and switch between multiple development branches — just like in Git.  
-4. 🔀 Develop **Merge Functionality** to merge branches and handle basic conflict resolution with clarity.
+1. Improve user configuration by allowing integration with platforms like **GitHub.com** and other remote repositories.  
+2. Add support for more Git-like features such as `push` and `pull` to interact with remote repositories.  
+3. Implement **Branching Support** to allow users to create and switch between multiple development branches — just like in Git.  
+4. Develop **Merge Functionality** to merge branches and handle basic conflict resolution with clarity.
 ---
 
 # 👨‍🔬 Researchers & 👥 Contributors
 
-1. 👨‍💻 [Tirth Patel(202401157)](https://github.com/Tirth9978)  
-2. 👨‍💻 [Raj Patel(202401152)](https://github.com/Raj-Patel7807)  
+1. [Tirth Patel(202401157)](https://github.com/Tirth9978)  
+2. [Raj Patel(202401152)](https://github.com/Raj-Patel7807)  
 
 ---
 # 📚 Reference
