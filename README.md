@@ -172,8 +172,8 @@ It helps users understand how to use the version control system with ease 💡.
 
 # 👨‍🔬 Researchers & 👥 Contributors
 
-1. [Tirth Patel(202401157)](https://github.com/Tirth9978)  
-2. [Raj Patel(202401152)](https://github.com/Raj-Patel7807)  
+1. [Tirth Patel (202401157)](https://github.com/Tirth9978)  
+2. [Raj Patel (202401152)](https://github.com/Raj-Patel7807)  
 
 ---
 # 📚 Reference
